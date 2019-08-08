@@ -35,6 +35,8 @@ dataset
 ### JSON Annotation Generation
 You need to create the annotations of each training and test splits using the script provided in the lib/utils/json_ucf.py. They need to be placed in the annotation folder as described above.
 
+## Training and Validation
+
 ### Training and Validation Configuration
 All of the configuration hyperparameters are set in the lib/utils/config.py. If you want to change them, simply edit the file with the settings you would like to.
 
