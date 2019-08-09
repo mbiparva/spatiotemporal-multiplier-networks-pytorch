@@ -15,6 +15,29 @@ This is a PyTorch implementation of the "Spatiotemporal Multiplier Networks for 
 ## Introduction
 Action recognition is one of the core tasks in video understanding and it has similar importance to image classification in the static vision domain. There are two common approaches in deep learning that started far apart at the beginning and recently have shown converging to somewhere in between. The first approach is using 3D convolutional layers that process the input spatiotemporal tensor while the second approach is human-brain-inspired and benefits from a Siamese network architecture. There are two parallel pathway of information processing: one takes RGB frames while the other takes optical flow frames. The "Spatiotemporal Multiplier Networks for Video Action Recognition" paper is an attempt to show how cross-stream lateral connections in a ResNet network architecture could be realized.
 
+## Installation
+
+1. Clone the spatiotemporal-multiplier-networks-pytorch repository
+
+```shell
+# Clone the repository
+git clone https://github.com/mbiparva/spatiotemporal-multiplier-networks-pytorch.git
+```
+
+2. Go into the tools directory
+
+```shell
+cd tools
+```
+
+3. Run the training or testing script
+```shell
+# to train
+python train.py
+# to test
+python test.py
+```
+
 ## Pre-trained Base Networks
 Please download the pre-trained base networks provided by the official repository [here](https://github.com/feichtenhofer/st-resnet#models-st-mulnet). The current implementatio uses ResNet-50, so make sure you choose the network snapshot that matches best your dataset (UCF-101), network architecture (ResNet-50), and the dataset split number correctly.
 You need to copy the downloaded pre-trained networks in experiment/base_pretrained_nets/ directory to be found by the network module.
