@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
     if args.cfg_file is not None:
         cfg_from_file(args.cfg_file)
-    if args.set_cfgs is not None:
+    if args.set_cfg is not None:
         cfg_from_list(args.set_cfg)
 
     cfg_from_list(set_positional_cfg(args))     # input arguments override cfg files and defaults

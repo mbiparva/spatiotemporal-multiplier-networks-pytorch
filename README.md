@@ -2,6 +2,19 @@
 
 This is a PyTorch implementation of the "Spatiotemporal Multiplier Networks for Video Action Recognition" paper by Christoph Feichtenhofer, Axel Pinz, Richard P. Wildes published in CVPR 2017. The official code released by Christoph can be found [here](https://github.com/feichtenhofer/st-resnet).
 
+## Contents
+
+1. [Introduction](#introduction)
+2. [Installation](#installation)
+3. [Pre-trained Base Networks](#pre-trained-base-networks)
+4. [Datasets](#datasets)
+5. [Preparation](#preparation)
+6. [Training and Testing Procedures](#training-and-testing-procedures)
+7. [Experimental Results](#experiment-results)
+
+## Introduction
+Action recognition is one of the core tasks in video understanding and it has similar importance to image classification in the static vision domain. There are two common approaches in deep learning that started far apart at the beginning and recently have shown converging to somewhere in between. The first approach is using 3D convolutional layers that process the input spatiotemporal tensor while the second approach is human-brain-inspired and benefits from a Siamese network architecture. There are two parallel pathway of information processing: one takes RGB frames while the other takes optical flow frames. The "Spatiotemporal Multiplier Networks for Video Action Recognition" paper is an attempt to show how cross-stream lateral connections in a ResNet network architecture could be realized.
+
 ## Pre-trained Base Networks
 Please download the pre-trained base networks provided by the official repository [here](https://github.com/feichtenhofer/st-resnet#models-st-mulnet). The current implementatio uses ResNet-50, so make sure you choose the network snapshot that matches best your dataset (UCF-101), network architecture (ResNet-50), and the dataset split number correctly.
 You need to copy the downloaded pre-trained networks in experiment/base_pretrained_nets/ directory to be found by the network module.
@@ -35,12 +48,17 @@ dataset
 ### JSON Annotation Generation
 You need to create the annotations of each training and test splits using the script provided in the lib/utils/json_ucf.py. They need to be placed in the annotation folder as described above.
 
-## Training and Validation
+## Training and Testing Procedures
+You can train or test the network by using the "train.py" or "test.pt" as follows.
 
-### Training and Validation Configuration
-All of the configuration hyperparameters are set in the lib/utils/config.py. If you want to change them, simply edit the file with the settings you would like to.
+### Training Script
+You can use the tools/train.py to start training the network. If you use --help you will see the list of optional sys arguments that could be passed such as "--use-gpu" and "--gpu-id". You can also have a custom cfg file loaded to customize the reference one if you would not like to change the reference one. Additionally, you can set them one by one once you call "--set".
 
+### Test Script
+You can use the tools/test.py to start testing the network by loading a custom network snapshot. You have to pass "--pre-trained-id" and "--pre-trained-epoch" to specify the network id and the epoch the snapshot was taken at.
 
+### Configuration File
+All of the configuration hyperparameters are set in the lib/utils/config.py. If you want to change them permanently, simply edit the file with the settings you would like to. Otherwise, use the approaches mentioned above to temporary change them.
 
-
-
+## Experimental Results
+This section will be updated with preliminary results soon.
