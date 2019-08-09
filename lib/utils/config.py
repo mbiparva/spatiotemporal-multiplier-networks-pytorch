@@ -48,17 +48,8 @@ __C.NUM_EPOCH = 100
 # Dataset name
 __C.DATASET_NAME = ('UCF101', )[0]
 
-# Dataset root
-__C.DATASET_ROOT = os.path.join(__C.DATASET_DIR, __C.DATASET_NAME)
-
 if __C.DATASET_NAME == 'UCF101':
     __C.SPLIT_NO = 1
-
-    __C.DATA_ENTITIES = [
-        os.path.join(__C.DATASET_ROOT, 'annotations'),
-        os.path.join(__C.DATASET_ROOT, 'images'),
-        os.path.join(__C.DATASET_ROOT, 'flows')
-    ]
 
     # Number of categories
     __C.NUM_CLASSES = 101

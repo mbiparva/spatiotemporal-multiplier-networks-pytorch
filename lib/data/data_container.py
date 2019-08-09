@@ -117,7 +117,13 @@ class DataContainer:
         spatial_transform = self.create_transform()
 
         if cfg.DATASET_NAME == 'UCF101':
-            self.dataset = UCF101(self.mode, cfg.DATA_ENTITIES, spatial_transform)
+            self.dataset = UCF101(
+                self.mode,
+                [os.path.join(cfg.DATASET_DIR, cfg.DATASET_NAME, 'annotations'),
+                 os.path.join(cfg.DATASET_DIR, cfg.DATASET_NAME, 'images'),
+                 os.path.join(cfg.DATASET_DIR, cfg.DATASET_NAME, 'flows')],
+                spatial_transform
+            )
         else:
             raise NotImplementedError('Implement other dataset classes here')
 
