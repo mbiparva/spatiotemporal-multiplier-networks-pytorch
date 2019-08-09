@@ -25,8 +25,7 @@ __C.VALIDATING = True
 __C.ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 # Data directory
-# __C.DATASET_DIR = os.path.abspath(os.path.join(__C.ROOT_DIR, 'dataset'))  # TODO: uncomment for the final submission
-__C.DATASET_DIR = '/media/mahd/SamSSD/myImp_gsv/Two_Speed/recognition_huawei/00-Dataset'
+__C.DATASET_DIR = os.path.abspath(os.path.join(__C.ROOT_DIR, 'dataset'))
 
 # Model directory
 __C.MODELS_DIR = os.path.abspath(os.path.join(__C.ROOT_DIR, 'lib', 'models'))
