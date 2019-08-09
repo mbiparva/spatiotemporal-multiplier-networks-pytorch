@@ -1,7 +1,6 @@
 import _init_lib_path
 
 import os
-import sys
 from datetime import datetime
 import datetime as dt
 import time
@@ -53,7 +52,7 @@ def set_positional_cfg(args_in):
 
 
 def main():
-    epoch_loop = EpochLoop(sys.argv)
+    epoch_loop = EpochLoop()
 
     try:
         epoch_loop.main()

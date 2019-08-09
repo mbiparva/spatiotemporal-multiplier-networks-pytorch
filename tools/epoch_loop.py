@@ -14,15 +14,15 @@ started_time = time.time()
 
 
 class EpochLoop:
-    def __init__(self, argv):
+    def __init__(self):
         self.trainer, self.validator = None, None
         self.device, self.net = None, None
         self.logger_writer = None
 
-        self.setup_gpu(argv)
+        self.setup_gpu()
 
-    def setup_gpu(self, argv):
-        cuda_device_id = argv[1] if len(argv) >= 2 else cfg.GPU_ID
+    def setup_gpu(self):
+        cuda_device_id = cfg.GPU_ID
         if cfg.USE_GPU and torch.cuda.is_available():
             self.device = torch.device('cuda:{}'.format(cuda_device_id))
         else:
