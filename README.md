@@ -76,6 +76,7 @@ This implementation is tested on the following packages:
 * Python 3.7
 * PyTorch 1.0 
 * CUDA 9.0
+* EasyDict
 
 ## Training and Testing Procedures
 You can train or test the network by using the "train.py" or "test.pt" as follows.
