@@ -10,7 +10,7 @@ This is a PyTorch implementation of the "Spatiotemporal Multiplier Networks for 
 4. [Datasets](#datasets)
 5. [Preparation](#preparation)
 6. [Training and Testing Procedures](#training-and-testing-procedures)
-7. [Experimental Results](#experiment-results)
+7. [Experimental Results](#experimental-results)
 
 ## Introduction
 Action recognition is one of the core tasks in video understanding and it has similar importance to image classification in the static vision domain. There are two common approaches in deep learning that started far apart at the beginning and recently have shown converging to somewhere in between. The first approach is using 3D convolutional layers that process the input spatiotemporal tensor while the second approach is human-brain-inspired and benefits from a Siamese network architecture. There are two parallel pathway of information processing: one takes RGB frames while the other takes optical flow frames. The "Spatiotemporal Multiplier Networks for Video Action Recognition" paper is an attempt to show how cross-stream lateral connections in a ResNet network architecture could be realized.
@@ -70,6 +70,12 @@ dataset
 ```
 ### JSON Annotation Generation
 You need to create the annotations of each training and test splits using the script provided in the lib/utils/json_ucf.py. They need to be placed in the annotation folder as described above.
+
+## Preparation
+This implementation is tested on the following packages:
+* Python 3.7
+* PyTorch 1.0 
+* CUDA 9.0
 
 ## Training and Testing Procedures
 You can train or test the network by using the "train.py" or "test.pt" as follows.
